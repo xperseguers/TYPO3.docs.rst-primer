@@ -92,7 +92,9 @@ Headings
 --------
 
 Section headers are created by underlining (and optionally overlining) the section
-title with a punctuation character, at least as long as the text::
+title with a punctuation character, at least as long as the text:
+
+.. code-block:: restructuredtext
 
    =================
    This is a heading
@@ -108,7 +110,7 @@ TYPO3 documentation, this convention is used which you may follow:
 * ``^``, for subsections
 * ``"``, for subsubsections
 
-::
+.. code-block:: restructuredtext
 
    ======================
    Title of your document
@@ -136,7 +138,9 @@ Lists, Bullets and Quote-like Blocks
 
 List markup is natural: just place an asterisk or a dash at the start of a
 paragraph and indent properly.  The same goes for numbered lists; they can also
-be autonumbered using a ``#`` sign::
+be autonumbered using a ``#`` sign:
+
+.. code-block:: restructuredtext
 
    * This is a bulleted list.
    * It has two items, the second
@@ -154,7 +158,9 @@ be autonumbered using a ``#`` sign::
 
 
 Nested lists are possible, but be aware that they must be separated from the
-parent list items by blank lines::
+parent list items by blank lines:
+
+.. code-block:: none
 
    * this is
    * a list
@@ -179,7 +185,9 @@ Note that the term cannot have more than one line of text.
 Quoted paragraphs are created by just indenting them more than the surrounding
 paragraphs.
 
-Line blocks are a way of preserving line breaks::
+Line blocks are a way of preserving line breaks:
+
+.. code-block:: restructuredtext
 
    | These lines are
    | broken exactly like in
@@ -191,14 +199,18 @@ Line blocks are a way of preserving line breaks::
 What are Directives
 ===================
 
-reST is mainly based on *directives* that are defined as follows::
+reST is mainly based on *directives* that are defined as follows:
+
+.. code-block:: restructuredtext
 
     .. <name>:: <arguments>
         :<option>: <option values>
 		
         content
 
-Example::
+Example:
+
+.. code-block:: restructuredtext
 
     .. image:: ../images/test.png
         :width: 200px
@@ -225,7 +237,7 @@ finds links and mail addresses in ordinary text.
 
 You can also separate the link and the target definition, like this:
 
-.. code-block:: none
+.. code-block:: restructuredtext
 
    This is a paragraph that contains `a link`_.
 
@@ -246,7 +258,9 @@ throughout the entire documentation.  There are two ways in which you can
 refer to labels:
 
 * If you place a label directly before a section title, you can reference to
-  it with ``:ref:`label-name```.  Example::
+  it with ``:ref:`label-name```.  Example:
+
+  .. code-block:: restructuredtext
 
      .. _my-reference-label:
 
@@ -261,7 +275,9 @@ refer to labels:
   title being "Section to cross-reference".  This works just as well when
   section and reference are in different source files.
 
-  Automatic labels also work with figures: given ::
+  Automatic labels also work with figures: given :
+
+  .. code-block:: restructuredtext
 
      .. _my-figure:
 
@@ -286,7 +302,9 @@ Tables
 ======
 
 Two forms of tables are supported.  For *grid tables*, you have to "paint" the
-cell grid yourself.  They look like this::
+cell grid yourself.  They look like this:
+
+.. code-block:: restructuredtext
 
    +------------------------+------------+----------+----------+
    | Header row, column 1   | Header 2   | Header 3 | Header 4 |
@@ -298,7 +316,9 @@ cell grid yourself.  They look like this::
    +------------------------+------------+----------+----------+
 
 *Simple tables* are easier to write, but limited: they must contain more than one
-row, and the first column cannot contain multiple lines.  They look like this::
+row, and the first column cannot contain multiple lines.  They look like this:
+
+.. code-block:: restructuredtext
 
    =====  =====  =======
    A      B      A and B
@@ -315,7 +335,9 @@ row, and the first column cannot contain multiple lines.  They look like this::
 Images and Figures
 ==================
 
-reST supports an image directive, used like so::
+reST supports an image directive, used like so:
+
+.. code-block:: restructuredtext
 
    .. image:: gnu.png
        :width: 200px
@@ -333,7 +355,9 @@ if the size has no unit or the unit is pixels, the given size will only be
 respected for output channels that support pixels (i.e. not in LaTeX output).
 Other units (like ``pt`` for points) will be used for HTML and LaTeX output.
 
-Figures should be generally preferred::
+Figures should be generally preferred:
+
+.. code-block:: restructuredtext
 
     .. figure:: gnu.png
        :width: 200px
@@ -352,7 +376,9 @@ Sooner or later you will want to structure your project documentation by having
 several reST files.  The toctree directive allows you to insert other files within
 a reST file. The reason to use this directive is that reST does not have facilities
 to interconnect several documents, or split documents into multiple output files.
-The toctree directive looks like::
+The toctree directive looks like:
+
+.. code-block:: restructuredtext
 
     .. toctree::
         :maxdepth: 2
@@ -375,11 +401,15 @@ Comments
 --------
 
 Every explicit markup block which isn't a valid markup construct (like the
-images above) is regarded as a comment.  For example::
+images above) is regarded as a comment.  For example:
+
+.. code-block:: restructuredtext
 
    .. This is a comment.
 
-You can indent text after a comment start to form multiline comments::
+You can indent text after a comment start to form multiline comments:
+
+.. code-block:: restructuredtext
 
    ..
       This whole indented block
@@ -394,11 +424,15 @@ Substitutions
 -------------
 
 reST supports "substitutions", which are pieces of text and/or markup referred to
-in the text by ``|name|``.  They are defined like this::
+in the text by ``|name|``.  They are defined like this:
+
+.. code-block:: restructuredtext
 
    .. |name| replace:: replacement *text*
 
-or this::
+or this:
+
+.. code-block:: restructuredtext
 
    .. |caution| image:: warning.png
                 :alt: Warning!
@@ -431,7 +465,9 @@ Source Code
 
 Literal code blocks are introduced by ending a paragraph with the special
 marker ``::``.  The literal block must be indented (and, like all paragraphs,
-separated from the surrounding ones by blank lines)::
+separated from the surrounding ones by blank lines):
+
+.. code-block:: restructuredtext
 
    This is a normal text paragraph. The next paragraph is a code sample::
 
@@ -460,7 +496,9 @@ Syntax Highlighting
 -------------------
 
 Instead of using the special marker ``::``, you may prefer the ``code-block``
-directive which lets you highlight the code::
+directive which lets you highlight the code:
+
+.. code-block:: restructuredtext
 
     .. code-block:: php
 
@@ -468,7 +506,9 @@ directive which lets you highlight the code::
         $foo = 'bar';
         ?>
 
-You may number lines as well::
+You may number lines as well:
+
+.. code-block:: restructuredtext
 
     .. code-block:: yaml
     	:linenos:
