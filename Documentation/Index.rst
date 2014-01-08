@@ -223,10 +223,9 @@ Use ```Link text <http://example.com/>`_`` for inline web links.  If the link
 text should be the web address, you don't need special markup at all, the parser
 finds links and mail addresses in ordinary text.
 
-If you want to use some arbitrary text in place of the link itself, use
-```TYPO3 Documentation <http://docs.typo3.org>`_``.
+You can also separate the link and the target definition, like this:
 
-You can also separate the link and the target definition, like this::
+.. code-block:: none
 
    This is a paragraph that contains `a link`_.
 
