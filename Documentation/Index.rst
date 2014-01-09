@@ -1,13 +1,13 @@
 .. _start:
 
-=======================
-reStructuredText Primer
-=======================
+=======================================
+reStructuredText Primer for TYPO3 Users
+=======================================
 
 This section is a brief introduction to reStructuredText (reST) concepts and
-syntax, intended to provide authors with enough information to author documents
-productively.  Since reST was designed to be a simple, unobtrusive markup
-language, this will not take too long.
+syntax, intended to provide TYPO3 authors with enough information to author
+documents productively.  Since reST was designed to be a simple, unobtrusive
+markup language, this will not take too long.
 
 .. seealso::
 

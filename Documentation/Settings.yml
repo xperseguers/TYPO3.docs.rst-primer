@@ -1,7 +1,7 @@
 # Settings.yml
 ---
 conf.py:
-  project: ReStructuredText Primer
+  project: ReStructuredText Primer for TYPO3 Users
   copyright: 2014
   version: 1.0
   release: 1.0.0

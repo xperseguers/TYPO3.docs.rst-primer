@@ -1,9 +1,14 @@
-=====================
-TYPO3.docs.rst-primer
-=====================
+=======================================
+reStructuredText Primer for TYPO3 Users
+=======================================
 
 Please use http://docs.typo3.org/typo3cms/drafts/github/xperseguers/RstPrimer/
 
+|
+|
+|
+|
+|
 
 **Credits**
 
