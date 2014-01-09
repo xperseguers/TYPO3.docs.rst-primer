@@ -11,12 +11,12 @@ language, this will not take too long.
 
 .. seealso::
 
-   The authoritative `reStructuredText User Documentation
-   <http://docutils.sourceforge.net/rst.html>`_.
+    The authoritative `reStructuredText User Documentation
+    <http://docutils.sourceforge.net/rst.html>`_.
 
 
 .. contents:: Overview
-	:local:
+    :local:
 
 
 .. _introduction:
@@ -96,9 +96,9 @@ title with a punctuation character, at least as long as the text:
 
 .. code-block:: restructuredtext
 
-   =================
-   This is a heading
-   =================
+    =================
+    This is a heading
+    =================
 
 Normally, there are no heading levels assigned to certain characters as the
 structure is determined from the succession of headings.  However, for the
@@ -112,19 +112,19 @@ TYPO3 documentation, this convention is used which you may follow:
 
 .. code-block:: restructuredtext
 
-   ======================
-   Title of your document
-   ======================
-   
-   Chapter 1: whatever
-   ===================
-   
-   Text goes here...
-   
-   Section 1.1: else
-   -----------------
-   
-   and so on
+    ======================
+    Title of your document
+    ======================
+
+    Chapter 1: whatever
+    ===================
+
+    Text goes here...
+
+    Section 1.1: else
+    -----------------
+
+    and so on
 
 Of course, you are free to use your own marker characters (see the reST
 documentation), and use a deeper nesting level, but keep in mind that most
@@ -142,19 +142,19 @@ be autonumbered using a ``#`` sign:
 
 .. code-block:: restructuredtext
 
-   * This is a bulleted list.
-   * It has two items, the second
-     item uses two lines.
+    * This is a bulleted list.
+    * It has two items, the second
+      item uses two lines.
 
-   - This is another bulleted list.
-   - It has two items as well, the second
-     item uses two lines
+    - This is another bulleted list.
+    - It has two items as well, the second
+      item uses two lines
 
-   1. This is a numbered list.
-   2. It has two items too.
+    1. This is a numbered list.
+    2. It has two items too.
 
-   #. This is a numbered list.
-   #. It has two items too.
+    #. This is a numbered list.
+    #. It has two items too.
 
 
 Nested lists are possible, but be aware that they must be separated from the
@@ -162,23 +162,23 @@ parent list items by blank lines:
 
 .. code-block:: none
 
-   * this is
-   * a list
+    * this is
+    * a list
 
-     * with a nested list
-     * and some subitems
+        * with a nested list
+        * and some subitems
 
-   * and here the parent list continues
+    * and here the parent list continues
 
 Definition lists are created as follows::
 
-   term (up to a line of text)
-      Definition of the term, which must be indented
+    term (up to a line of text)
+        Definition of the term, which must be indented
 
-      and can even consist of multiple paragraphs
+        and can even consist of multiple paragraphs
 
-   next term
-      Description.
+    next term
+        Description.
 
 Note that the term cannot have more than one line of text.
 
@@ -189,9 +189,9 @@ Line blocks are a way of preserving line breaks:
 
 .. code-block:: restructuredtext
 
-   | These lines are
-   | broken exactly like in
-   | the source file.
+    | These lines are
+    | broken exactly like in
+    | the source file.
 
 
 .. _directives:
@@ -205,7 +205,7 @@ reST is mainly based on *directives* that are defined as follows:
 
     .. <name>:: <arguments>
         :<option>: <option values>
-		
+
         content
 
 Example:
@@ -239,9 +239,9 @@ You can also separate the link and the target definition, like this:
 
 .. code-block:: restructuredtext
 
-   This is a paragraph that contains `a link`_.
+    This is a paragraph that contains `a link`_.
 
-   .. _a link: http://example.com/
+    .. _a link: http://example.com/
 
 
 Internal Links
@@ -262,14 +262,14 @@ refer to labels:
 
   .. code-block:: restructuredtext
 
-     .. _my-reference-label:
+      .. _my-reference-label:
 
-     Section to cross-reference
-     --------------------------
+      Section to cross-reference
+      --------------------------
 
-     This is the text of the section.
+      This is the text of the section.
 
-     It refers to the section itself, see :ref:`my-reference-label`.
+      It refers to the section itself, see :ref:`my-reference-label`.
 
   The ``:ref:`` role would then generate a link to the section, with the link
   title being "Section to cross-reference".  This works just as well when
@@ -279,11 +279,11 @@ refer to labels:
 
   .. code-block:: restructuredtext
 
-     .. _my-figure:
+      .. _my-figure:
 
-     .. figure:: whatever
+      .. figure:: whatever
 
-        Figure caption
+          Figure caption
 
   a reference ``:ref:`my-figure``` would insert a reference to the figure
   with link text "Figure caption".
@@ -306,28 +306,28 @@ cell grid yourself.  They look like this:
 
 .. code-block:: restructuredtext
 
-   +------------------------+------------+----------+----------+
-   | Header row, column 1   | Header 2   | Header 3 | Header 4 |
-   | (header rows optional) |            |          |          |
-   +========================+============+==========+==========+
-   | body row 1, column 1   | column 2   | column 3 | column 4 |
-   +------------------------+------------+----------+----------+
-   | body row 2             | ...        | ...      |          |
-   +------------------------+------------+----------+----------+
+    +------------------------+------------+----------+----------+
+    | Header row, column 1   | Header 2   | Header 3 | Header 4 |
+    | (header rows optional) |            |          |          |
+    +========================+============+==========+==========+
+    | body row 1, column 1   | column 2   | column 3 | column 4 |
+    +------------------------+------------+----------+----------+
+    | body row 2             | ...        | ...      |          |
+    +------------------------+------------+----------+----------+
 
 *Simple tables* are easier to write, but limited: they must contain more than one
 row, and the first column cannot contain multiple lines.  They look like this:
 
 .. code-block:: restructuredtext
 
-   =====  =====  =======
-   A      B      A and B
-   =====  =====  =======
-   False  False  False
-   True   False  False
-   False  True   False
-   True   True   True
-   =====  =====  =======
+    =====  =====  =======
+    A      B      A and B
+    =====  =====  =======
+    False  False  False
+    True   False  False
+    False  True   False
+    True   True   True
+    =====  =====  =======
 
 
 .. _images:
@@ -339,9 +339,9 @@ reST supports an image directive, used like so:
 
 .. code-block:: restructuredtext
 
-   .. image:: gnu.png
-       :width: 200px
-       :alt: alternate text
+    .. image:: gnu.png
+        :width: 200px
+        :alt: alternate text
 
 When used within Sphinx, the file name given (here ``gnu.png``) must be relative
 to the source file.  For example, the file ``sketch/spam.rst`` could refer
@@ -360,11 +360,11 @@ Figures should be generally preferred:
 .. code-block:: restructuredtext
 
     .. figure:: gnu.png
-       :width: 200px
-       :alt: alternate text
+        :width: 200px
+        :alt: alternate text
 
-       figures are like images but with a caption and may be relocated
-       elsewhere (to better use available page space) when rendering a PDF
+        figures are like images but with a caption and may be relocated
+        elsewhere (to better use available page space) when rendering a PDF
 
 
 .. _toctree:
@@ -382,12 +382,13 @@ The toctree directive looks like:
 
     .. toctree::
         :maxdepth: 2
-        
+
         intro.rst
         chapter1.rst
         chapter2.rst
+        otherDir/file.rst
 
-It includes 3 reST files and shows a table of contents (TOC) that includes the title
+It includes 4 reST files and shows a table of contents (TOC) that includes the title
 found in the reST documents.
 
 .. _others:
@@ -405,17 +406,17 @@ images above) is regarded as a comment.  For example:
 
 .. code-block:: restructuredtext
 
-   .. This is a comment.
+    .. This is a comment.
 
 You can indent text after a comment start to form multiline comments:
 
 .. code-block:: restructuredtext
 
-   ..
-      This whole indented block
-      is a comment.
+    ..
+        This whole indented block
+        is a comment.
 
-      Still in the comment.
+        Still in the comment.
 
 
 .. _substitutions:
@@ -428,14 +429,14 @@ in the text by ``|name|``.  They are defined like this:
 
 .. code-block:: restructuredtext
 
-   .. |name| replace:: replacement *text*
+    .. |name| replace:: replacement *text*
 
 or this:
 
 .. code-block:: restructuredtext
 
-   .. |caution| image:: warning.png
-                :alt: Warning!
+    .. |caution| image:: warning.png
+        :alt: Warning!
 
 Sphinx provides three substitutions that are defined by default.
 
@@ -469,14 +470,14 @@ separated from the surrounding ones by blank lines):
 
 .. code-block:: restructuredtext
 
-   This is a normal text paragraph. The next paragraph is a code sample::
+    This is a normal text paragraph. The next paragraph is a code sample::
 
-      It is not processed in any way, except
-      that the indentation is removed.
+        It is not processed in any way, except
+        that the indentation is removed.
 
-      It can span multiple lines.
+        It can span multiple lines.
 
-   This is a normal text paragraph again.
+    This is a normal text paragraph again.
 
 The handling of the ``::`` marker is smart:
 
@@ -511,13 +512,13 @@ You may number lines as well:
 .. code-block:: restructuredtext
 
     .. code-block:: yaml
-    	:linenos:
+        :linenos:
 
-    	conf.py:
-    	  copyright: 2013-2014
-    	  project: Sphinx Python Documentation Generator and Viewer
-    	  version: 1.3
-    	  release: 1.3.0
+        conf.py:
+          copyright: 2013-2014
+          project: Sphinx Python Documentation Generator and Viewer
+          version: 1.3
+          release: 1.3.0
 
 See http://pygments.org/languages/ for a list of supported languages.
 
