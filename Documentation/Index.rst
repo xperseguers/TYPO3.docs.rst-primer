@@ -165,10 +165,14 @@ parent list items by blank lines:
     * this is
     * a list
 
-        * with a nested list
-        * and some subitems
+      * with a nested list
+      * and some subitems
 
     * and here the parent list continues
+
+.. caution::
+
+	The text immediately after the bullet determines the indentation.
 
 Definition lists are created as follows::
 
