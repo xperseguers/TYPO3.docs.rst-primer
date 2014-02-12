@@ -172,7 +172,9 @@ parent list items by blank lines:
 
 .. caution::
 
-	The text immediately after the bullet determines the indentation.
+	The text immediately after the bullet determines the indentation:
+
+	.. image:: Images/sublist_indent.png
 
 Definition lists are created as follows::
 
