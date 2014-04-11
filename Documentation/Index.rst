@@ -564,7 +564,7 @@ Syntax Highlighting
 -------------------
 
 Instead of using the special marker ``::``, you may prefer the ``code-block``
-directive which lets you highlight the code:
+directive which lets you highlight the code for a specific language:
 
 .. code-block:: restructuredtext
 
@@ -582,12 +582,14 @@ to get:
     $foo = 'bar';
     ?>
 
-You may number lines as well:
+You may number lines as well and emphasize one or more lines:
 
 .. code-block:: restructuredtext
+   :emphasize-lines: 2-3
 
     .. code-block:: yaml
         :linenos:
+        :emphasize-lines: 1,4-5
 
         conf.py:
           copyright: 2013-2014
@@ -599,6 +601,7 @@ which shows as:
 
 .. code-block:: yaml
     :linenos:
+    :emphasize-lines: 1,4-5
 
     conf.py:
       copyright: 2013-2014
@@ -606,7 +609,7 @@ which shows as:
       version: 1.3
       release: 1.3.0
 
-See http://pygments.org/languages/ for a list of supported languages (please
+See http://pygments.org/docs/lexers/ for a list of supported languages (please
 note that 'typoscript' is supported as well).
 
 
