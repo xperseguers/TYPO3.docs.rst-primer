@@ -66,9 +66,9 @@ Inline markup (bold, italic, verbatim)
 
 The standard reST inline markup is quite simple: use
 
-* one asterisk: ``*italic*`` for emphasis (italics),
-* two asterisks: ``**bold**`` for strong emphasis (boldface), and
-* double backquotes: ````text```` for code samples.
+* one asterisk: ``*italic*`` for emphasis (*italics*),
+* two asterisks: ``**bold**`` for strong emphasis (**boldface**), and
+* double backquotes: ````text```` for ``code samples``.
 
 If asterisks or backquotes appear in running text and could be confused with
 inline markup delimiters, they have to be escaped with a backslash.
@@ -138,16 +138,16 @@ Lists, Bullets and Quote-like Blocks
 
 List markup is natural: just place an asterisk or a dash at the start of a
 paragraph and indent properly.  The same goes for numbered lists; they can also
-be autonumbered using a ``#`` sign:
+be autonumbered using a ``#`` sign. The following code:
 
 .. code-block:: restructuredtext
 
-    * This is a bulleted list.
-    * It has two items, the second
+    - This is a bulleted list.
+    - It has two items, the second
       item uses two lines.
 
-    - This is another bulleted list.
-    - It has two items as well, the second
+    * This is another bulleted list.
+    * It has two items as well, the second
       item uses two lines
 
     1. This is a numbered list.
@@ -156,19 +156,44 @@ be autonumbered using a ``#`` sign:
     #. This is a numbered list.
     #. It has two items too.
 
+gives:
+
+- This is a bulleted list.
+- It has two items, the second
+  item uses two lines.
+
+* This is another bulleted list.
+* It has two items as well, the second
+  item uses two lines
+
+1. This is a numbered list.
+2. It has two items too.
+
+#. This is a numbered list.
+#. It has two items too.
 
 Nested lists are possible, but be aware that they must be separated from the
-parent list items by blank lines:
+parent list items by blank lines. The following code:
 
 .. code-block:: none
 
-    * this is
-    * a list
+    - this is
+    - a list
 
-      * with a nested list
-      * and some subitems
+      - with a nested list
+      - and some subitems
 
-    * and here the parent list continues
+    - and here the parent list continues
+
+gives:
+
+- this is
+- a list
+
+  - with a nested list
+  - and some subitems
+
+- and here the parent list continues
 
 .. caution::
 
@@ -186,12 +211,22 @@ Definition lists are created as follows::
     next term
         Description.
 
+and is rendered as:
+
+term (up to a line of text)
+    Definition of the term, which must be indented
+
+    and can even consist of multiple paragraphs
+
+next term
+    Description.
+
 Note that the term cannot have more than one line of text.
 
 Quoted paragraphs are created by just indenting them more than the surrounding
 paragraphs.
 
-Line blocks are a way of preserving line breaks:
+Line blocks are a way of preserving line breaks. The following code:
 
 .. code-block:: restructuredtext
 
@@ -199,6 +234,11 @@ Line blocks are a way of preserving line breaks:
     | broken exactly like in
     | the source file.
 
+gives:
+
+| These lines are
+| broken exactly like in
+| the source file.
 
 .. _directives:
 
@@ -317,9 +357,20 @@ cell grid yourself.  They look like this:
     | (header rows optional) |            |          |          |
     +========================+============+==========+==========+
     | body row 1, column 1   | column 2   | column 3 | column 4 |
+    +------------------------+------------+----------+ spanning |
+    | body row 2             | ...        | ...      | here...  |
     +------------------------+------------+----------+----------+
-    | body row 2             | ...        | ...      |          |
-    +------------------------+------------+----------+----------+
+
+and are rendered as:
+
++------------------------+------------+----------+----------+
+| Header row, column 1   | Header 2   | Header 3 | Header 4 |
+| (header rows optional) |            |          |          |
++========================+============+==========+==========+
+| body row 1, column 1   | column 2   | column 3 | column 4 |
++------------------------+------------+----------+ spanning |
+| body row 2             | ...        | ...      | here...  |
++------------------------+------------+----------+----------+
 
 *Simple tables* are easier to write, but limited: they must contain more than one
 row, and the first column cannot contain multiple lines.  They look like this:
@@ -335,6 +386,16 @@ row, and the first column cannot contain multiple lines.  They look like this:
     True   True   True
     =====  =====  =======
 
+and are rendered as:
+
+=====  =====  =======
+A      B      A and B
+=====  =====  =======
+False  False  False
+True   False  False
+False  True   False
+True   True   True
+=====  =====  =======
 
 .. _images:
 
@@ -513,6 +574,14 @@ directive which lets you highlight the code:
         $foo = 'bar';
         ?>
 
+to get:
+
+.. code-block:: php
+
+    <?php
+    $foo = 'bar';
+    ?>
+
 You may number lines as well:
 
 .. code-block:: restructuredtext
@@ -526,7 +595,19 @@ You may number lines as well:
           version: 1.3
           release: 1.3.0
 
-See http://pygments.org/languages/ for a list of supported languages.
+which shows as:
+
+.. code-block:: yaml
+    :linenos:
+
+    conf.py:
+      copyright: 2013-2014
+      project: Sphinx Python Documentation Generator and Viewer
+      version: 1.3
+      release: 1.3.0
+
+See http://pygments.org/languages/ for a list of supported languages (please
+note that 'typoscript' is supported as well).
 
 
 .. _other-semantic-markup:
@@ -543,7 +624,7 @@ in a different style:
    it will be treated specially: it will be shown in a tool-tip in HTML, and
    output only once in LaTeX.
 
-   Example: ``:abbr:`LIFO (last-in, first-out)```.
+   Example: ``:abbr:`LIFO (last-in, first-out)```: :abbr:`LIFO (last-in, first-out)`.
 
 .. rst:role:: command
 
