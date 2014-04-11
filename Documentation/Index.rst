@@ -439,23 +439,38 @@ Figures should be generally preferred:
 Admonitions
 ===========
 
-Admonitions are call-out boxes that attracts the user's attention
+Admonitions are call-out boxes that attract the user's attention
 in various, be it for important stuff, links to more information, etc.
 This is a typical admonition structure:
 
 .. code-block:: restructuredtext
 
-	.. warning::
+    .. warning::
 
-	   Be careful when installing an extension, you never know
-	   who developed it ;-)
+       Be careful when installing an extension, you never know
+       who developed it ;-)
 
 The following admonition types are commonly used in TYPO3 projects:
 
 - note
+
+  .. note::
+     Text of the note.
+
 - important
+
+  .. important::
+     Something important.
+
 - tip
+
+  .. tip::
+     A Friendly tip.
+
 - warning
+
+  .. warning::
+     Be careful when using a given command.
 
 The special "todo" admonition will not be rendered. It is really just
 like a comment block inside your reST document.
