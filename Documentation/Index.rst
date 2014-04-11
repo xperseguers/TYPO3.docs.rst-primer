@@ -434,6 +434,33 @@ Figures should be generally preferred:
         elsewhere (to better use available page space) when rendering a PDF
 
 
+.. _admonitions:
+
+Admonitions
+===========
+
+Admonitions are call-out boxes that attracts the user's attention
+in various, be it for important stuff, links to more information, etc.
+This is a typical admonition structure:
+
+.. code-block:: restructuredtext
+
+	.. warning::
+
+	   Be careful when installing an extension, you never know
+	   who developed it ;-)
+
+The following admonition types are commonly used in TYPO3 projects:
+
+- note
+- important
+- tip
+- warning
+
+The special "todo" admonition will not be rendered. It is really just
+like a comment block inside your reST document.
+
+
 .. _toctree:
 
 Including other Files
