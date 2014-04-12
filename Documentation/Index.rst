@@ -18,6 +18,9 @@ markup language, this will not take too long.
 .. contents:: Overview
     :local:
 
+.. toctree::
+    AdvancedMarkup.rst
+
 
 .. _introduction:
 
@@ -656,89 +659,3 @@ which shows as:
 
 See http://pygments.org/docs/lexers/ for a list of supported languages (please
 note that 'typoscript' is supported as well).
-
-
-.. _other-semantic-markup:
-
-Other Semantic Markup
----------------------
-
-The following roles don't do anything special except formatting the text
-in a different style:
-
-.. rst:role:: abbr
-
-   An abbreviation.  If the role content contains a parenthesized explanation,
-   it will be treated specially: it will be shown in a tool-tip in HTML, and
-   output only once in LaTeX.
-
-   Example: ``:abbr:`LIFO (last-in, first-out)```: :abbr:`LIFO (last-in, first-out)`.
-
-.. rst:role:: command
-
-   The name of an OS-level command, such as ``rm``.
-
-.. rst:role:: file
-
-   The name of a file or directory.  Within the contents, you can use curly
-   braces to indicate a "variable" part, for example::
-
-      ... is installed in :file:`/usr/lib/python2.{x}/site-packages` ...
-
-   In the built documentation, the ``x`` will be displayed differently to
-   indicate that it is to be replaced by the Python minor version.
-
-.. rst:role:: guilabel
-
-   Labels presented as part of an interactive user interface should be marked
-   using ``guilabel``.  Any label used in the interface should be marked with
-   this role, including button labels, window titles, field names, menu and
-   menu selection names, and even values in selection lists.
-
-   An accelerator key for the GUI label can be included using an ampersand;
-   this will be stripped and displayed underlined in the output (example:
-   ``:guilabel:`&Cancel```).  To include a literal ampersand, double it.
-
-.. rst:role:: kbd
-
-   Mark a sequence of keystrokes.  What form the key sequence takes may depend
-   on platform- or application-specific conventions.  When there are no relevant
-   conventions, the names of modifier keys should be spelled out, to improve
-   accessibility for new users and non-native speakers.  For example, an
-   *xemacs* key sequence may be marked like ``:kbd:`C-x C-f```, but without
-   reference to a specific application or platform, the same sequence should be
-   marked as ``:kbd:`Control-x Control-f```.
-
-.. rst:role:: menuselection
-
-   Menu selections should be marked using the ``menuselection`` role.  This is
-   used to mark a complete sequence of menu selections, including selecting
-   submenus and choosing a specific operation, or any subsequence of such a
-   sequence.  The names of individual selections should be separated by
-   ``-->``.
-
-   For example, to mark the selection "Start > Programs", use this markup::
-
-      :menuselection:`Start --> Programs`
-
-   When including a selection that includes some trailing indicator, such as the
-   ellipsis some operating systems use to indicate that the command opens a
-   dialog, the indicator should be omitted from the selection name.
-
-   ``menuselection`` also supports ampersand accelerators just like
-   :rst:role:`guilabel`.
-
-.. rst:role:: program
-
-   The name of an executable program.  This may differ from the file name for
-   the executable for some platforms.  In particular, the ``.exe`` (or other)
-   extension should be omitted for Windows programs.
-
-The following roles generate external links:
-
-.. rst:role:: rfc
-
-   A reference to an Internet Request for Comments.  This generates appropriate
-   index entries. The text "RFC *number*\ " is generated; in the HTML output,
-   this text is a hyperlink to an online copy of the specified RFC.  You can
-   link to a specific section by saying ``:rfc:`number#anchor```.
