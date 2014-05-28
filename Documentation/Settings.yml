@@ -5,4 +5,7 @@ conf.py:
   copyright: 2014
   version: 1.0
   release: 1.0.0
+  html_theme_options:
+    github_repository: xperseguers/TYPO3.docs.rst-primer
+    github_branch: master
 ...
