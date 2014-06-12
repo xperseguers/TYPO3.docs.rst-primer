@@ -63,7 +63,7 @@ release
 PDF rendering
 ^^^^^^^^^^^^^
 
-The PDF of your documentation is rendered using the LaTeX builder from Sphinx (see :ref:`rendering-pdf` if needed)
+The PDF of your documentation is rendered using the LaTeX builder from Sphinx (see `Rendering PDF from reStructuredText <http://docs.typo3.org/typo3cms/extensions/sphinx/AdvancedUsersManual/RenderingPdf/Index.html>`_ if needed)
 and should be explicitly activated for your extension. To do so, open file :file:`Settings.yml` (at the root of your
 documentation folder) and make sure it contains following configuration options (lines 6 to 15):
 
