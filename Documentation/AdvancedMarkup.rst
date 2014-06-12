@@ -231,7 +231,7 @@ Edit manual on GitHub
 In case your extension is hosted on GitHub, you may configure the manual so that it gets easily editable when published
 on http://docs.typo3.org:
 
-.. figure:: ../Images/edit-me-github.png
+.. image:: Images/edit-me-github.png
 	:alt: Link to edit the chapter on GitHub
 
 To make this link visible, you should add the relative URI of your GitHub project repository and the branch you are
