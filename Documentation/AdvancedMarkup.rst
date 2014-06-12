@@ -223,6 +223,40 @@ translated as well, making it impossible to match chapters with their translated
 	:alt: Translating URI segments
 
 
+.. _docs-typo3-org-edit-github:
+
+Edit manual on GitHub
+^^^^^^^^^^^^^^^^^^^^^
+
+In case your extension is hosted on GitHub, you may configure the manual so that it gets easily editable when published
+on http://docs.typo3.org:
+
+.. figure:: ../Images/edit-me-github.png
+	:alt: Link to edit the chapter on GitHub
+
+To make this link visible, you should add the relative URI of your GitHub project repository and the branch you are
+using (typically "master") to the configuration file :file:`Documentation/Settings.yml`:
+
+.. code-block:: yaml
+	:linenos:
+	:emphasize-lines: 6-8
+
+	conf.py:
+	  copyright: 2013-2014
+	  project: Sphinx Python Documentation Generator and Viewer
+	  version: 2.1
+	  release: 2.1.0
+	  html_theme_options:
+	    github_repository: xperseguers/t3ext-sphinx
+	    github_branch: master
+
+where ``xperseguers/t3ext-sphinx`` is the relative URI in ``http://github.com/xperseguers/t3ext-sphinx``.
+
+.. note::
+	Every official TYPO3 manual, guide and reference is using this option, making it a breeze to contribute if you
+	spot a typo or wish something got rephrased or better explained.
+
+
 .. _other-semantic-markup:
 
 Other Semantic Markup
