@@ -14,7 +14,7 @@ markup language, this will not take too long.
     The authoritative `reStructuredText User Documentation
     <http://docutils.sourceforge.net/rst.html>`_.
 
-
+ca
 .. contents:: Overview
     :local:
 
@@ -344,8 +344,10 @@ refer to labels:
   to, but you must give the link an explicit title, using this syntax:
   ``:ref:`Link title <label-name>```.
 
-* Labels should always use a minus sign to separate words and not an
-  underscore in order to prevent troubles with PDF output.
+.. caution::
+
+    Labels should always use a minus sign to separate words and not an
+    underscore in order to prevent troubles with PDF output.
 
 
 .. _tables:
